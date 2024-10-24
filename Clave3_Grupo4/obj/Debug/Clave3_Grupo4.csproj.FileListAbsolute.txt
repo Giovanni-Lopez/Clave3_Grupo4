@@ -2,7 +2,6 @@ C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\D
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\Debug\Clave3_Grupo4.exe
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\Debug\Clave3_Grupo4.pdb
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.csproj.AssemblyReference.cache
-C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.Form1.resources
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.Properties.Resources.resources
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.csproj.GenerateResource.cache
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.csproj.CoreCompileInputs.cache
@@ -42,3 +41,4 @@ C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\D
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.csproj.CopyComplete
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioGuardar.resources
+C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioLogin.resources

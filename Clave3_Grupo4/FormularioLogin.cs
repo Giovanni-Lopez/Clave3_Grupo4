@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Clave3_Grupo4
 {
-    public partial class Form1 : Form
+    public partial class FormularioLogin : Form
     {
         private ConexionDB mConexion;
-        public Form1()
+        public FormularioLogin()
         {
             InitializeComponent();
             mConexion = new ConexionDB();
@@ -22,20 +22,25 @@ namespace Clave3_Grupo4
         private void btnConexion_Click(object sender, EventArgs e)
         {
             
-            // Verifica que la conexión esté correstamente conectada, si no da error de conexión
+            //Verifica que la conexión esté correstamente conectada, si no da error de conexión
             try
             {                
                 if (mConexion.getConnection() != null)
                 {                    
                     MessageBox.Show("Conexion Exitosa!!");
-            // Abrir el formulario de guardar
+
+                    this.Hide();
+
+                    //Abrir el formulario de guardar
                     FormularioGuardar formularioGuardar = new FormularioGuardar();
-                    formularioGuardar.ShowDialog(); // Mostrar el formulario
+
+                    // Mostrar el formulario
+                    formularioGuardar.Show();                    
                 }                             
             }
             catch (Exception ex)
             {                
-                MessageBox.Show("Hubo un error en su conexion, por favor verificar");
+                MessageBox.Show("Hubo un error en su conexion, por favor verificar...: " + ex);
             }            
         }
     }

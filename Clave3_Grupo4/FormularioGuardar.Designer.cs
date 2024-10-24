@@ -32,9 +32,12 @@ namespace Clave3_Grupo4
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbApellido = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtDui = new System.Windows.Forms.TextBox();
+            this.lbDui = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +61,9 @@ namespace Clave3_Grupo4
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSalir);
+            this.groupBox1.Controls.Add(this.txtDui);
+            this.groupBox1.Controls.Add(this.lbDui);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -70,12 +76,31 @@ namespace Clave3_Grupo4
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
-            // txtNombre
+            // txtDui
             // 
-            this.txtNombre.Location = new System.Drawing.Point(83, 28);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 3;
+            this.txtDui.Location = new System.Drawing.Point(83, 103);
+            this.txtDui.Name = "txtDui";
+            this.txtDui.Size = new System.Drawing.Size(100, 20);
+            this.txtDui.TabIndex = 7;
+            // 
+            // lbDui
+            // 
+            this.lbDui.AutoSize = true;
+            this.lbDui.Location = new System.Drawing.Point(16, 103);
+            this.lbDui.Name = "lbDui";
+            this.lbDui.Size = new System.Drawing.Size(26, 13);
+            this.lbDui.TabIndex = 6;
+            this.lbDui.Text = "DUI";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(59, 129);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtApellido
             // 
@@ -84,14 +109,22 @@ namespace Clave3_Grupo4
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 4;
             // 
-            // btnGuardar
+            // txtNombre
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(83, 118);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 5;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.txtNombre.Location = new System.Drawing.Point(83, 28);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 3;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(151, 129);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 8;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FormularioGuardar
             // 
@@ -100,7 +133,7 @@ namespace Clave3_Grupo4
             this.ClientSize = new System.Drawing.Size(329, 216);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormularioGuardar";
-            this.Text = "FormularioGuardar";
+            this.Text = "Formulario Guardar";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -115,5 +148,8 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDui;
+        private System.Windows.Forms.Label lbDui;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
