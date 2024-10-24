@@ -35,7 +35,8 @@ namespace Clave3_Grupo4
                     FormularioGuardar formularioGuardar = new FormularioGuardar();
 
                     // Mostrar el formulario
-                    formularioGuardar.Show();                    
+                    formularioGuardar.Show();
+                    
                 }                             
             }
             catch (Exception ex)
@@ -43,5 +44,7 @@ namespace Clave3_Grupo4
                 MessageBox.Show("Hubo un error en su conexion, por favor verificar...: " + ex);
             }            
         }
+
+        
     }
 }

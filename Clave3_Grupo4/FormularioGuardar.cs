@@ -40,6 +40,10 @@ namespace Clave3_Grupo4
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            //Cerrado de formulario y desconexion de la basa de datos
+            ConexionDB conexionDB = new ConexionDB();
+            conexionDB.closeConetion();
+            MessageBox.Show("Desconexion de la base de datos");
             Close();
         }
     }

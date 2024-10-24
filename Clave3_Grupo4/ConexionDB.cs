@@ -37,5 +37,16 @@ namespace Clave3_Grupo4
                 }                       
             return conexion;
         }
+
+        /// <summary>
+        /// Metodo utilizado para cerrar la conexion con la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public MySqlConnection closeConetion()
+        {
+            conexion = new MySqlConnection(cadenaConexion);
+            conexion.Close();
+            return conexion;
+        }
     }
 }
