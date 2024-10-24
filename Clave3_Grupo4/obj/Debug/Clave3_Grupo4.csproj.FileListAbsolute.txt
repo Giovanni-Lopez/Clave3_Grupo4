@@ -41,3 +41,4 @@ C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\D
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.csproj.CopyComplete
+C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioGuardar.resources

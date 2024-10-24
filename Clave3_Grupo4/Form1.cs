@@ -22,12 +22,15 @@ namespace Clave3_Grupo4
         private void btnConexion_Click(object sender, EventArgs e)
         {
             
-            //Verifica que la conexión esté correstamente conectada, si no da error de conexión
+            // Verifica que la conexión esté correstamente conectada, si no da error de conexión
             try
             {                
                 if (mConexion.getConnection() != null)
                 {                    
                     MessageBox.Show("Conexion Exitosa!!");
+            // Abrir el formulario de guardar
+                    FormularioGuardar formularioGuardar = new FormularioGuardar();
+                    formularioGuardar.ShowDialog(); // Mostrar el formulario
                 }                             
             }
             catch (Exception ex)
