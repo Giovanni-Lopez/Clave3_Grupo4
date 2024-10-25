@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Clave3_Grupo4
 {
-    public partial class FormularioGuardar : Form
+    public partial class FormularioGuardarClientes : Form
     {
-        public FormularioGuardar()
+        public FormularioGuardarClientes()
         {
             InitializeComponent();
         }

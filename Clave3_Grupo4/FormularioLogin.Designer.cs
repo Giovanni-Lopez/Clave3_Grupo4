@@ -31,6 +31,7 @@ namespace Clave3_Grupo4
         {
             this.btnConexion = new System.Windows.Forms.Button();
             this.gbInicio = new System.Windows.Forms.GroupBox();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -44,11 +45,11 @@ namespace Clave3_Grupo4
             // 
             this.btnConexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnConexion.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.btnConexion.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConexion.ForeColor = System.Drawing.Color.Red;
-            this.btnConexion.Location = new System.Drawing.Point(79, 179);
+            this.btnConexion.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConexion.ForeColor = System.Drawing.Color.Black;
+            this.btnConexion.Location = new System.Drawing.Point(32, 180);
             this.btnConexion.Name = "btnConexion";
-            this.btnConexion.Size = new System.Drawing.Size(118, 41);
+            this.btnConexion.Size = new System.Drawing.Size(68, 41);
             this.btnConexion.TabIndex = 0;
             this.btnConexion.Text = "Iniciar";
             this.btnConexion.UseVisualStyleBackColor = false;
@@ -56,6 +57,7 @@ namespace Clave3_Grupo4
             // 
             // gbInicio
             // 
+            this.gbInicio.Controls.Add(this.btnRegistrar);
             this.gbInicio.Controls.Add(this.pictureBox1);
             this.gbInicio.Controls.Add(this.txtPassword);
             this.gbInicio.Controls.Add(this.txtUsuario);
@@ -68,6 +70,20 @@ namespace Clave3_Grupo4
             this.gbInicio.TabIndex = 1;
             this.gbInicio.TabStop = false;
             this.gbInicio.Text = "Inicio sesión";
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.btnRegistrar.Font = new System.Drawing.Font("MV Boli", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.Blue;
+            this.btnRegistrar.Location = new System.Drawing.Point(96, 180);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(168, 41);
+            this.btnRegistrar.TabIndex = 6;
+            this.btnRegistrar.Text = "No tienes una cuenta, registrate";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // pictureBox1
             // 
@@ -136,6 +152,7 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnRegistrar;
     }
 }
 

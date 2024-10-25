@@ -1,7 +1,7 @@
 ﻿
 namespace Clave3_Grupo4
 {
-    partial class FormularioGuardar
+    partial class FormularioGuardarClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -78,12 +78,15 @@ namespace Clave3_Grupo4
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.Cyan;
+            this.btnSalir.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSalir.Location = new System.Drawing.Point(151, 129);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // txtDui
@@ -104,12 +107,15 @@ namespace Clave3_Grupo4
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.Cyan;
+            this.btnGuardar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGuardar.Location = new System.Drawing.Point(59, 129);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 30);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtApellido
@@ -126,15 +132,15 @@ namespace Clave3_Grupo4
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 3;
             // 
-            // FormularioGuardar
+            // FormularioGuardarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 216);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "FormularioGuardar";
-            this.Text = "Formulario Guardar";
+            this.Name = "FormularioGuardarClientes";
+            this.Text = "Formulario Clientes";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

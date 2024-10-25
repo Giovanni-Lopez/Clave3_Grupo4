@@ -40,7 +40,6 @@ C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\D
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.csproj.CopyComplete
-C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioGuardar.resources
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioLogin.resources
 C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\Clave3_Grupo4\bin\Debug\Clave3_Grupo4.exe.config
 C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\Clave3_Grupo4\bin\Debug\Clave3_Grupo4.exe
@@ -86,3 +85,5 @@ C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Gru
 C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.csproj.CopyComplete
 C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.exe
 C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.pdb
+C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioGuardarEmpleados.resources
+C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioGuardarClientes.resources

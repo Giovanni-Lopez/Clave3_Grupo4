@@ -32,7 +32,7 @@ namespace Clave3_Grupo4
                     this.Hide();
 
                     //Abrir el formulario de guardar
-                    FormularioGuardar formularioGuardar = new FormularioGuardar();
+                    FormularioGuardarClientes formularioGuardar = new FormularioGuardarClientes();
 
                     // Mostrar el formulario
                     formularioGuardar.Show();
@@ -45,6 +45,15 @@ namespace Clave3_Grupo4
             }            
         }
 
-        
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            //Abrir el formularioRegistroEmpleados
+            FormularioGuardarEmpleados formularioGuardarEmpleado = new FormularioGuardarEmpleados();
+
+            // Mostrar el formulario
+            formularioGuardarEmpleado.Show();
+        }
     }
 }
