@@ -43,17 +43,6 @@ namespace Clave3_Grupo4
             txtNombres.Clear();
             txtApellidos.Clear();
             cmbTipoUsuario.Text = "Seleccione";
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            //Abrir el formulario de login
-            FormularioLogin formularioLogin = new FormularioLogin();
-
-            // Mostrar el formulario
-            formularioLogin.Show();
-        }
+        }       
     }
 }

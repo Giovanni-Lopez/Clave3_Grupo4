@@ -46,5 +46,16 @@ namespace Clave3_Grupo4
             MessageBox.Show("Desconexion de la base de datos");
             Close();
         }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            //Abrir el formulario de login
+            FormularioProductos formularioProduct = new FormularioProductos();
+
+            // Mostrar el formulario
+            formularioProduct.Show();
+        }
     }
 }

@@ -31,15 +31,14 @@ namespace Clave3_Grupo4
         {
             this.lbNombre = new System.Windows.Forms.Label();
             this.gbEmpleado = new System.Windows.Forms.GroupBox();
-            this.lbApellidos = new System.Windows.Forms.Label();
-            this.lbTipo = new System.Windows.Forms.Label();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.lbTipo = new System.Windows.Forms.Label();
+            this.lbApellidos = new System.Windows.Forms.Label();
             this.gbEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +54,6 @@ namespace Clave3_Grupo4
             // 
             // gbEmpleado
             // 
-            this.gbEmpleado.Controls.Add(this.btnLogin);
             this.gbEmpleado.Controls.Add(this.pictureBox1);
             this.gbEmpleado.Controls.Add(this.btnSalir);
             this.gbEmpleado.Controls.Add(this.btnGuardar);
@@ -72,37 +70,41 @@ namespace Clave3_Grupo4
             this.gbEmpleado.TabStop = false;
             this.gbEmpleado.Text = "Datos Empleado";
             // 
-            // lbApellidos
+            // pictureBox1
             // 
-            this.lbApellidos.AutoSize = true;
-            this.lbApellidos.Location = new System.Drawing.Point(6, 75);
-            this.lbApellidos.Name = "lbApellidos";
-            this.lbApellidos.Size = new System.Drawing.Size(49, 13);
-            this.lbApellidos.TabIndex = 1;
-            this.lbApellidos.Text = "Apellidos";
+            this.pictureBox1.Image = global::Clave3_Grupo4.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(249, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 81);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
-            // lbTipo
+            // btnSalir
             // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(6, 118);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(67, 13);
-            this.lbTipo.TabIndex = 2;
-            this.lbTipo.Text = "Tipo Usuario";
+            this.btnSalir.BackColor = System.Drawing.Color.Cyan;
+            this.btnSalir.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Location = new System.Drawing.Point(190, 180);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 30);
+            this.btnSalir.TabIndex = 7;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtNombres
+            // btnGuardar
             // 
-            this.txtNombres.Location = new System.Drawing.Point(9, 44);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(179, 20);
-            this.txtNombres.TabIndex = 3;
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Location = new System.Drawing.Point(9, 91);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(179, 20);
-            this.txtApellidos.TabIndex = 4;
+            this.btnGuardar.BackColor = System.Drawing.Color.Cyan;
+            this.btnGuardar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardar.Location = new System.Drawing.Point(86, 180);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 30);
+            this.btnGuardar.TabIndex = 6;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cmbTipoUsuario
             // 
@@ -117,54 +119,37 @@ namespace Clave3_Grupo4
             this.cmbTipoUsuario.TabIndex = 5;
             this.cmbTipoUsuario.Text = "Seleccione";
             // 
-            // btnGuardar
+            // txtApellidos
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Cyan;
-            this.btnGuardar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(9, 177);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 30);
-            this.btnGuardar.TabIndex = 6;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.txtApellidos.Location = new System.Drawing.Point(9, 91);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(179, 20);
+            this.txtApellidos.TabIndex = 4;
             // 
-            // btnSalir
+            // txtNombres
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Cyan;
-            this.btnSalir.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(113, 177);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 30);
-            this.btnSalir.TabIndex = 7;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.txtNombres.Location = new System.Drawing.Point(9, 44);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(179, 20);
+            this.txtNombres.TabIndex = 3;
             // 
-            // pictureBox1
+            // lbTipo
             // 
-            this.pictureBox1.Image = global::Clave3_Grupo4.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(249, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 81);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.lbTipo.AutoSize = true;
+            this.lbTipo.Location = new System.Drawing.Point(6, 118);
+            this.lbTipo.Name = "lbTipo";
+            this.lbTipo.Size = new System.Drawing.Size(67, 13);
+            this.lbTipo.TabIndex = 2;
+            this.lbTipo.Text = "Tipo Usuario";
             // 
-            // btnLogin
+            // lbApellidos
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Cyan;
-            this.btnLogin.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.Black;
-            this.btnLogin.Location = new System.Drawing.Point(232, 177);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 30);
-            this.btnLogin.TabIndex = 9;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.lbApellidos.AutoSize = true;
+            this.lbApellidos.Location = new System.Drawing.Point(6, 75);
+            this.lbApellidos.Name = "lbApellidos";
+            this.lbApellidos.Size = new System.Drawing.Size(49, 13);
+            this.lbApellidos.TabIndex = 1;
+            this.lbApellidos.Text = "Apellidos";
             // 
             // FormularioGuardarEmpleados
             // 
@@ -193,6 +178,5 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.Label lbTipo;
         private System.Windows.Forms.Label lbApellidos;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnLogin;
     }
 }

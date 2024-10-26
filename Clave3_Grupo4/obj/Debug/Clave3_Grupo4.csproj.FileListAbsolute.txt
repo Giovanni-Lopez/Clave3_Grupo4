@@ -87,3 +87,5 @@ C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Gru
 C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.pdb
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioGuardarEmpleados.resources
 C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioGuardarClientes.resources
+C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioProductos.resources
+C:\Users\Win11\Documents\Materias\Programacion\Clave3_Grupo4\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.FormularioInicio.resources

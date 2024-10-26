@@ -16,7 +16,7 @@ namespace Clave3_Grupo4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormularioLogin());
+            Application.Run(new FormularioInicio());
         }
     }
 }
