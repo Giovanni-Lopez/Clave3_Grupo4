@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 26, 2024 at 04:42 AM
+-- Generation Time: Oct 26, 2024 at 06:16 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -80,7 +80,7 @@ CREATE TABLE `productos` (
 --
 ALTER TABLE `clienteproductos`
   ADD PRIMARY KEY (`idClientes`,`idProductos`),
-  ADD KEY `idProductos` (`idProductos`);
+  ADD KEY `clienteproductos_ibfk_2` (`idProductos`);
 
 --
 -- Indexes for table `clientes`
@@ -109,13 +109,19 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `idClientes` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idClientes` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `empleados`
 --
 ALTER TABLE `empleados`
   MODIFY `idEmpleados` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `idproductos` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
