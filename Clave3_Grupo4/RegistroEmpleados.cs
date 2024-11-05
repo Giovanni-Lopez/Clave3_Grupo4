@@ -54,21 +54,36 @@ namespace Clave3_Grupo4
             MySqlConnection conexion = objConexion.getConnection();
 
             try
-            {
+            {                
+
+                // Verifica si ya existe un gerente
+                string queryVerificar = "SELECT COUNT(*) FROM empleados WHERE LOWER(tipo) = 'gerente'";
+
+                using (MySqlCommand cmdVerificar = new MySqlCommand(queryVerificar, conexion))
+                {
+                    int cantidadGerentes = Convert.ToInt32(cmdVerificar.ExecuteScalar());
+
+                    if (cantidadGerentes > 0 && this.TipoUsuario == "Gerente")
+                    {
+                        // Error ya existe un gerente
+                        MessageBox.Show("Ya existe un registro de tipo Gerente. \nNo se pueden registrar más gerentes.");
+                        return;
+                    }
+                }
+
                 string query = "INSERT INTO empleados (nombres, apellidos, tipo) VALUES (@nombres, @apellidos, @tipo)";
                 using (MySqlCommand cmd = new MySqlCommand(query, conexion))
                 {
                     //Se le asignan valores a los parametros
                     cmd.Parameters.AddWithValue("@nombres", this.Nombres);
-                    cmd.Parameters.AddWithValue("@apellidos", this.Apellidos);
-                    cmd.Parameters.AddWithValue("@tipo", this.TipoUsuario);
+                    cmd.Parameters.AddWithValue("@apellidos", this.Apellidos);                  
+                    cmd.Parameters.AddWithValue("@tipo", this.TipoUsuario);                    
+                    
 
                     //Ejecutamos comando
                     cmd.ExecuteNonQuery();
-                }
-
-                MessageBox.Show("Registro guardado exitosamente....");
-
+                    MessageBox.Show("Registro guardado exitosamente....");
+                }              
             }
             catch (Exception ex)
             {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Clave3_Grupo4
 {
@@ -28,13 +29,21 @@ namespace Clave3_Grupo4
 
         //para usar MySqlConnection debemos de instalar MySql.Data ultima version
         public MySqlConnection getConnection()
-        {            
-            //Verifica si la conexion es nula o se encuentra cerrada o se daño 
+        {
+            try
+            {
+                //Verifica si la conexion es nula o se encuentra cerrada o se daño 
                 if (conexion == null || conexion.State == System.Data.ConnectionState.Closed || conexion.State == System.Data.ConnectionState.Broken)
                 {
-                    conexion = new MySqlConnection(cadenaConexion);                
+                    conexion = new MySqlConnection(cadenaConexion);
                     conexion.Open();
-                }                       
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar...\nVerifique conexión!!");
+            }
+                    
             return conexion;
         }
 
