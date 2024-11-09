@@ -98,55 +98,57 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConexionDB.cs" />
-    <Compile Include="FormularioGuardarEmpleados.cs">
+    <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Clases\RegistroEmpleados.cs" />
+    <Compile Include="Clases\Usuarios.cs" />
+    <Compile Include="ConexionDB\ConexionDB.cs" />
+    <Compile Include="Formularios\FormularioGuardarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioGuardarEmpleados.Designer.cs">
+    <Compile Include="Formularios\FormularioGuardarEmpleados.Designer.cs">
       <DependentUpon>FormularioGuardarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioLogin.cs">
+    <Compile Include="Formularios\FormularioLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioLogin.Designer.cs">
+    <Compile Include="Formularios\FormularioLogin.Designer.cs">
       <DependentUpon>FormularioLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioGuardarClientes.cs">
+    <Compile Include="Formularios\FormularioGuardarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioGuardarClientes.Designer.cs">
+    <Compile Include="Formularios\FormularioGuardarClientes.Designer.cs">
       <DependentUpon>FormularioGuardarClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioProductos.cs">
+    <Compile Include="Formularios\FormularioProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioProductos.Designer.cs">
+    <Compile Include="Formularios\FormularioProductos.Designer.cs">
       <DependentUpon>FormularioProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioInicio.cs">
+    <Compile Include="Formularios\FormularioInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioInicio.Designer.cs">
+    <Compile Include="Formularios\FormularioInicio.Designer.cs">
       <DependentUpon>FormularioInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistroClientes.cs" />
-    <Compile Include="RegistroEmpleados.cs" />
-    <Compile Include="RegistroProductos.cs" />
-    <EmbeddedResource Include="FormularioGuardarEmpleados.resx">
+    <Compile Include="Clases\RegistroClientes.cs" />
+    <Compile Include="Clases\RegistroProductos.cs" />
+    <EmbeddedResource Include="Formularios\FormularioGuardarEmpleados.resx">
       <DependentUpon>FormularioGuardarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioLogin.resx">
+    <EmbeddedResource Include="Formularios\FormularioLogin.resx">
       <DependentUpon>FormularioLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioGuardarClientes.resx">
+    <EmbeddedResource Include="Formularios\FormularioGuardarClientes.resx">
       <DependentUpon>FormularioGuardarClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioProductos.resx">
+    <EmbeddedResource Include="Formularios\FormularioProductos.resx">
       <DependentUpon>FormularioProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioInicio.resx">
+    <EmbeddedResource Include="Formularios\FormularioInicio.resx">
       <DependentUpon>FormularioInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

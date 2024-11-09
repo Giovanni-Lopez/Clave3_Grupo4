@@ -13,6 +13,8 @@ namespace Clave3_Grupo4
         //Clase donde se crearan los metodos o funciones para los productos
         private string nombres;
         private string tipoProductos;
+        private double saldo;
+        private int idCliente;
 
         //Encapsula las variables de tipo privadas
         public string Nombres
@@ -27,11 +29,25 @@ namespace Clave3_Grupo4
             set { tipoProductos = value; }
         }
 
+        public double Saldo
+        {
+            get { return saldo; }
+            set { saldo = value; }
+        }
+
+        public int IdCliente
+        {
+            get { return idCliente; }
+            set { idCliente = value; }
+        }
+
         //Contructor
-        public RegistroProductos(string nombres, string tipoProductos)
+        public RegistroProductos(string nombres, string tipoProductos, double saldo, int idCliente)
         {
             this.nombres = nombres;
             this.tipoProductos = tipoProductos;
+            this.saldo = saldo;
+            this.idCliente = idCliente;
         }
 
         //Metodo para guardar registro
@@ -45,12 +61,14 @@ namespace Clave3_Grupo4
 
             try
             {
-                string query = "INSERT INTO productos (nombreProducto, tipoProducto) VALUES (@nombreProductos, @tipoProductos)";
+                string query = "INSERT INTO productos (nombreProducto, tipoProducto, saldo, idCliente) VALUES (@nombreProductos, @tipoProductos, @idCliente)";
                 using (MySqlCommand cmd = new MySqlCommand(query, conexion))
                 {
                     //Se le asignan valores a los parametros
                     cmd.Parameters.AddWithValue("@nombreProductos", this.Nombres);
-                    cmd.Parameters.AddWithValue("@tipoProductos", this.TipoProductos);                    
+                    cmd.Parameters.AddWithValue("@tipoProductos", this.TipoProductos);
+                    cmd.Parameters.AddWithValue("@saldo", this.Saldo);
+                    cmd.Parameters.AddWithValue("idCliente", this.IdCliente);
 
                     //Ejecutamos comando
                     cmd.ExecuteNonQuery();
@@ -74,6 +92,5 @@ namespace Clave3_Grupo4
             }
 
         }
-
     }
 }

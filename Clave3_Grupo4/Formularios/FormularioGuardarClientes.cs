@@ -20,14 +20,14 @@ namespace Clave3_Grupo4
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //Validando campos vacios
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text) || !int.TryParse(txtDui.Text, out int dui))
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text) || !int.TryParse(txtDui.Text, out int dui) || string.IsNullOrWhiteSpace(cbxEstado.Text))
             {
                 MessageBox.Show("Por favor complete todos los campos...!!");
                 return;
             }
 
             //Creando nueva instancia 
-            RegistroClientes nuevoCliente = new RegistroClientes(txtNombre.Text, txtApellido.Text, dui);
+            RegistroClientes nuevoCliente = new RegistroClientes(txtNombre.Text, txtApellido.Text, dui, cbxEstado.Text);
 
             //metodo para que guarde nuestro registro
             nuevoCliente.GuardarRegistro();
@@ -36,6 +36,7 @@ namespace Clave3_Grupo4
             txtNombre.Clear();
             txtApellido.Clear();
             txtDui.Clear();
+            cbxEstado.Text = string.Empty;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

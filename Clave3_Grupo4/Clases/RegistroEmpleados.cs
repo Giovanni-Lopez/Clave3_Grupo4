@@ -6,11 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Clave3_Grupo4
+namespace Clave3_Grupo4.Clases
 {
     class RegistroEmpleados
     {
-
         //Clase donde se crearan los metodos o funciones para los empleados
 
         private string nombres;
@@ -54,7 +53,7 @@ namespace Clave3_Grupo4
             MySqlConnection conexion = objConexion.getConnection();
 
             try
-            {                
+            {
 
                 // Verifica si ya existe un gerente
                 string queryVerificar = "SELECT COUNT(*) FROM empleados WHERE LOWER(tipo) = 'gerente'";
@@ -76,14 +75,14 @@ namespace Clave3_Grupo4
                 {
                     //Se le asignan valores a los parametros
                     cmd.Parameters.AddWithValue("@nombres", this.Nombres);
-                    cmd.Parameters.AddWithValue("@apellidos", this.Apellidos);                  
-                    cmd.Parameters.AddWithValue("@tipo", this.TipoUsuario);                    
-                    
+                    cmd.Parameters.AddWithValue("@apellidos", this.Apellidos);
+                    cmd.Parameters.AddWithValue("@tipo", this.TipoUsuario);
+
 
                     //Ejecutamos comando
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Registro guardado exitosamente....");
-                }              
+                }
             }
             catch (Exception ex)
             {
@@ -100,6 +99,5 @@ namespace Clave3_Grupo4
             }
 
         }
-
     }
 }

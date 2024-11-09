@@ -9,6 +9,14 @@ using System.Windows.Forms;
 
 namespace Clave3_Grupo4
 {
+
+    // Enum para el estado del cliente
+    public enum EstadoCliente
+    {
+        Activo,
+        Baja
+    }
+
     class RegistroClientes
     {
 
@@ -16,6 +24,9 @@ namespace Clave3_Grupo4
         private string nombres;
         private string apellidos;
         private int dui;
+        private string estado;
+        
+
 
         //Encapsula las variables de tipo privadas
         public string Nombres {
@@ -35,12 +46,20 @@ namespace Clave3_Grupo4
             set { dui = value; }
         }
 
+        public string Estado
+        {
+            get { return estado; }
+            set{ estado = value;}
+
+        }
+
         //Constructor
-        public RegistroClientes(string nombres, string apellidos, int dui)
+        public RegistroClientes(string nombres, string apellidos, int dui, string estado)
         {
             this.nombres = nombres;
             this.apellidos = apellidos;
             this.dui = dui;
+            this.estado = estado;
         }
 
         //Metodo para guardar registro
@@ -54,13 +73,14 @@ namespace Clave3_Grupo4
 
             try
             {
-                string query = "INSERT INTO clientes (nombres, apellidos, dui) VALUES (@nombres, @apellidos, @dui)";
+                string query = "INSERT INTO clientes (nombres, apellidos, dui, estado) VALUES (@nombres, @apellidos, @dui, @estado)";
                 using (MySqlCommand cmd = new MySqlCommand(query, conexion))
                 {
                     //Se le asignan valores a los parametros
                     cmd.Parameters.AddWithValue("@nombres", this.Nombres);
                     cmd.Parameters.AddWithValue("@apellidos", this.Apellidos);
                     cmd.Parameters.AddWithValue("@dui", this.DUI);
+                    cmd.Parameters.AddWithValue("@estado", this.Estado);
 
                     //Ejecutamos comando
                     cmd.ExecuteNonQuery();

@@ -34,6 +34,10 @@ namespace Clave3_Grupo4
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.cmbTipoProducto = new System.Windows.Forms.ComboBox();
             this.gbProducto = new System.Windows.Forms.GroupBox();
+            this.lbCliente = new System.Windows.Forms.Label();
+            this.cbxCliente = new System.Windows.Forms.ComboBox();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
+            this.lbSaldo = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -76,9 +80,14 @@ namespace Clave3_Grupo4
             this.cmbTipoProducto.Name = "cmbTipoProducto";
             this.cmbTipoProducto.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoProducto.TabIndex = 3;
+            this.cmbTipoProducto.Text = "Seleccione";
             // 
             // gbProducto
             // 
+            this.gbProducto.Controls.Add(this.lbCliente);
+            this.gbProducto.Controls.Add(this.cbxCliente);
+            this.gbProducto.Controls.Add(this.txtSaldo);
+            this.gbProducto.Controls.Add(this.lbSaldo);
             this.gbProducto.Controls.Add(this.btnRegresar);
             this.gbProducto.Controls.Add(this.btnSalir);
             this.gbProducto.Controls.Add(this.lbNombreProducto);
@@ -88,10 +97,44 @@ namespace Clave3_Grupo4
             this.gbProducto.Controls.Add(this.cmbTipoProducto);
             this.gbProducto.Location = new System.Drawing.Point(24, 31);
             this.gbProducto.Name = "gbProducto";
-            this.gbProducto.Size = new System.Drawing.Size(271, 156);
+            this.gbProducto.Size = new System.Drawing.Size(309, 231);
             this.gbProducto.TabIndex = 4;
             this.gbProducto.TabStop = false;
             this.gbProducto.Text = "Datos";
+            // 
+            // lbCliente
+            // 
+            this.lbCliente.AutoSize = true;
+            this.lbCliente.Location = new System.Drawing.Point(16, 177);
+            this.lbCliente.Name = "lbCliente";
+            this.lbCliente.Size = new System.Drawing.Size(39, 13);
+            this.lbCliente.TabIndex = 11;
+            this.lbCliente.Text = "Cliente";
+            // 
+            // cbxCliente
+            // 
+            this.cbxCliente.FormattingEnabled = true;
+            this.cbxCliente.Location = new System.Drawing.Point(19, 193);
+            this.cbxCliente.Name = "cbxCliente";
+            this.cbxCliente.Size = new System.Drawing.Size(121, 21);
+            this.cbxCliente.TabIndex = 10;
+            this.cbxCliente.Text = "Seleccione";
+            // 
+            // txtSaldo
+            // 
+            this.txtSaldo.Location = new System.Drawing.Point(19, 148);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.Size = new System.Drawing.Size(121, 20);
+            this.txtSaldo.TabIndex = 9;
+            // 
+            // lbSaldo
+            // 
+            this.lbSaldo.AutoSize = true;
+            this.lbSaldo.Location = new System.Drawing.Point(16, 132);
+            this.lbSaldo.Name = "lbSaldo";
+            this.lbSaldo.Size = new System.Drawing.Size(34, 13);
+            this.lbSaldo.TabIndex = 8;
+            this.lbSaldo.Text = "Saldo";
             // 
             // btnRegresar
             // 
@@ -133,10 +176,11 @@ namespace Clave3_Grupo4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 221);
+            this.ClientSize = new System.Drawing.Size(356, 274);
             this.Controls.Add(this.gbProducto);
             this.Name = "FormularioProductos";
             this.Text = "Formulario productos";
+            this.Load += new System.EventHandler(this.FormularioProductos_Load);
             this.gbProducto.ResumeLayout(false);
             this.gbProducto.PerformLayout();
             this.ResumeLayout(false);
@@ -153,5 +197,9 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label lbCliente;
+        private System.Windows.Forms.ComboBox cbxCliente;
+        private System.Windows.Forms.TextBox txtSaldo;
+        private System.Windows.Forms.Label lbSaldo;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clave3_Grupo4.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,7 @@ namespace Clave3_Grupo4
             }
 
             //Creando nueva instancia 
+            
             RegistroEmpleados nuevoEmpleado = new RegistroEmpleados(txtNombres.Text, txtApellidos.Text, cmbTipoUsuario.Text);
 
             //metodo para que guarde nuestro registro
