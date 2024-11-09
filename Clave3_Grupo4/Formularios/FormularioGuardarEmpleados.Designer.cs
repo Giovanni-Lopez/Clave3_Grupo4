@@ -39,8 +39,10 @@ namespace Clave3_Grupo4
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.lbTipo = new System.Windows.Forms.Label();
             this.lbApellidos = new System.Windows.Forms.Label();
+            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.gbEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNombre
@@ -151,17 +153,28 @@ namespace Clave3_Grupo4
             this.lbApellidos.TabIndex = 1;
             this.lbApellidos.Text = "Apellidos";
             // 
+            // dgvEmpleados
+            // 
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.Location = new System.Drawing.Point(399, 36);
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.Size = new System.Drawing.Size(386, 245);
+            this.dgvEmpleados.TabIndex = 2;
+            // 
             // FormularioGuardarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 293);
+            this.ClientSize = new System.Drawing.Size(797, 293);
+            this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.gbEmpleado);
             this.Name = "FormularioGuardarEmpleados";
             this.Text = "Formulario Empleados";
+            this.Load += new System.EventHandler(this.FormularioGuardarEmpleados_Load);
             this.gbEmpleado.ResumeLayout(false);
             this.gbEmpleado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +191,6 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.Label lbTipo;
         private System.Windows.Forms.Label lbApellidos;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dgvEmpleados;
     }
 }

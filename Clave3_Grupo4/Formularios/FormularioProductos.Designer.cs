@@ -41,7 +41,9 @@ namespace Clave3_Grupo4
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.dgvDatosProductos = new System.Windows.Forms.DataGridView();
             this.gbProducto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNombreProducto
@@ -95,9 +97,9 @@ namespace Clave3_Grupo4
             this.gbProducto.Controls.Add(this.lbTipoProducto);
             this.gbProducto.Controls.Add(this.txtNombreProducto);
             this.gbProducto.Controls.Add(this.cmbTipoProducto);
-            this.gbProducto.Location = new System.Drawing.Point(24, 31);
+            this.gbProducto.Location = new System.Drawing.Point(24, 12);
             this.gbProducto.Name = "gbProducto";
-            this.gbProducto.Size = new System.Drawing.Size(309, 231);
+            this.gbProducto.Size = new System.Drawing.Size(276, 231);
             this.gbProducto.TabIndex = 4;
             this.gbProducto.TabStop = false;
             this.gbProducto.Text = "Datos";
@@ -172,17 +174,27 @@ namespace Clave3_Grupo4
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // dgvDatosProductos
+            // 
+            this.dgvDatosProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatosProductos.Location = new System.Drawing.Point(314, 12);
+            this.dgvDatosProductos.Name = "dgvDatosProductos";
+            this.dgvDatosProductos.Size = new System.Drawing.Size(418, 230);
+            this.dgvDatosProductos.TabIndex = 5;
+            // 
             // FormularioProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 274);
+            this.ClientSize = new System.Drawing.Size(744, 262);
+            this.Controls.Add(this.dgvDatosProductos);
             this.Controls.Add(this.gbProducto);
             this.Name = "FormularioProductos";
             this.Text = "Formulario productos";
             this.Load += new System.EventHandler(this.FormularioProductos_Load);
             this.gbProducto.ResumeLayout(false);
             this.gbProducto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,5 +213,6 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.ComboBox cbxCliente;
         private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Label lbSaldo;
+        private System.Windows.Forms.DataGridView dgvDatosProductos;
     }
 }

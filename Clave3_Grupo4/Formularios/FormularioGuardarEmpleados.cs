@@ -1,5 +1,6 @@
 ﻿using Clave3_Grupo4.Clases;
 using System;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +46,25 @@ namespace Clave3_Grupo4
             txtNombres.Clear();
             txtApellidos.Clear();
             cmbTipoUsuario.Text = "Seleccione";
-        }       
+        }
+
+        private void CargarDatos(DataGridView dgv, string sqlString)
+        {
+            ConexionDB conexion = new ConexionDB();
+            MySqlConnection connection = conexion.getConnection();
+            MySqlCommand command = new MySqlCommand(sqlString, connection);
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(command);
+            DataTable dt = new DataTable();
+
+            adaptador.Fill(dt);
+
+            dgv.DataSource = dt;
+
+        }
+
+        private void FormularioGuardarEmpleados_Load(object sender, EventArgs e)
+        {
+            CargarDatos(dgvEmpleados,"select * from empleados");
+        }
     }
 }

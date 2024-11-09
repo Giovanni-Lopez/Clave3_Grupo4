@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,6 +59,25 @@ namespace Clave3_Grupo4
 
             // Mostrar el formulario
             formularioProduct.Show();
+        }
+
+        private void CargarDatos(DataGridView dgv, string sqlString)
+        {
+            ConexionDB conexion = new ConexionDB();
+            MySqlConnection connection = conexion.getConnection();
+            MySqlCommand command = new MySqlCommand(sqlString, connection);
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(command);
+            DataTable dt = new DataTable();
+
+            adaptador.Fill(dt);
+
+            dgv.DataSource = dt;
+
+        }
+
+        private void FormularioGuardarClientes_Load(object sender, EventArgs e)
+        {
+            CargarDatos(dgvClientes,"select * from clientes");
         }
     }
 }

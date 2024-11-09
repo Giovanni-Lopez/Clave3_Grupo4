@@ -57,6 +57,7 @@ namespace Clave3_Grupo4
         private void FormularioProductos_Load(object sender, EventArgs e)
         {
             CargarClientes();
+            CargarDatos(dgvDatosProductos,"Select * from clienteproductos");
         }
 
         private void CargarClientes()
@@ -94,6 +95,20 @@ namespace Clave3_Grupo4
             cbxCliente.DataSource = listaClientes;
             cbxCliente.DisplayMember = "NombreCompleto"; // Muestra el nombre completo
             cbxCliente.ValueMember = "IdClientes"; // Usar IdClientes como valor
+        }
+
+        private void CargarDatos(DataGridView dgv, string sqlString)
+        {
+            ConexionDB conexion = new ConexionDB();
+            MySqlConnection connection =  conexion.getConnection();
+            MySqlCommand command = new MySqlCommand(sqlString,connection);
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(command);
+            DataTable dt = new DataTable();
+
+            adaptador.Fill(dt);
+
+            dgv.DataSource = dt;
+
         }
 
     }
