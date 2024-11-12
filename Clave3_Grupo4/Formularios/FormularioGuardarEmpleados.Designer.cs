@@ -40,6 +40,7 @@ namespace Clave3_Grupo4
             this.lbTipo = new System.Windows.Forms.Label();
             this.lbApellidos = new System.Windows.Forms.Label();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.gbEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -56,6 +57,7 @@ namespace Clave3_Grupo4
             // 
             // gbEmpleado
             // 
+            this.gbEmpleado.Controls.Add(this.btnActualizar);
             this.gbEmpleado.Controls.Add(this.pictureBox1);
             this.gbEmpleado.Controls.Add(this.btnSalir);
             this.gbEmpleado.Controls.Add(this.btnGuardar);
@@ -87,7 +89,7 @@ namespace Clave3_Grupo4
             this.btnSalir.BackColor = System.Drawing.Color.Cyan;
             this.btnSalir.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(190, 180);
+            this.btnSalir.Location = new System.Drawing.Point(254, 180);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 7;
@@ -100,7 +102,7 @@ namespace Clave3_Grupo4
             this.btnGuardar.BackColor = System.Drawing.Color.Cyan;
             this.btnGuardar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(86, 180);
+            this.btnGuardar.Location = new System.Drawing.Point(-2, 180);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 30);
             this.btnGuardar.TabIndex = 6;
@@ -160,6 +162,20 @@ namespace Clave3_Grupo4
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.Size = new System.Drawing.Size(386, 245);
             this.dgvEmpleados.TabIndex = 2;
+            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.Cyan;
+            this.btnActualizar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizar.Location = new System.Drawing.Point(79, 180);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(90, 30);
+            this.btnActualizar.TabIndex = 9;
+            this.btnActualizar.Text = "Actulizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // FormularioGuardarEmpleados
             // 
@@ -192,5 +208,6 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.Label lbApellidos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

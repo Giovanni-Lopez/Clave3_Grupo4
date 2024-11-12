@@ -42,6 +42,7 @@ namespace Clave3_Grupo4
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgvDatosProductos = new System.Windows.Forms.DataGridView();
+            this.btnActulizar = new System.Windows.Forms.Button();
             this.gbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosProductos)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +87,7 @@ namespace Clave3_Grupo4
             // 
             // gbProducto
             // 
+            this.gbProducto.Controls.Add(this.btnActulizar);
             this.gbProducto.Controls.Add(this.lbCliente);
             this.gbProducto.Controls.Add(this.cbxCliente);
             this.gbProducto.Controls.Add(this.txtSaldo);
@@ -142,7 +144,7 @@ namespace Clave3_Grupo4
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnRegresar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(181, 91);
+            this.btnRegresar.Location = new System.Drawing.Point(181, 190);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(75, 31);
             this.btnRegresar.TabIndex = 7;
@@ -154,7 +156,7 @@ namespace Clave3_Grupo4
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSalir.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(181, 60);
+            this.btnSalir.Location = new System.Drawing.Point(181, 159);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 31);
             this.btnSalir.TabIndex = 6;
@@ -181,6 +183,19 @@ namespace Clave3_Grupo4
             this.dgvDatosProductos.Name = "dgvDatosProductos";
             this.dgvDatosProductos.Size = new System.Drawing.Size(418, 230);
             this.dgvDatosProductos.TabIndex = 5;
+            this.dgvDatosProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosProductos_CellClick);
+            // 
+            // btnActulizar
+            // 
+            this.btnActulizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnActulizar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActulizar.Location = new System.Drawing.Point(175, 56);
+            this.btnActulizar.Name = "btnActulizar";
+            this.btnActulizar.Size = new System.Drawing.Size(95, 31);
+            this.btnActulizar.TabIndex = 12;
+            this.btnActulizar.Text = "Actulizar";
+            this.btnActulizar.UseVisualStyleBackColor = false;
+            this.btnActulizar.Click += new System.EventHandler(this.btnActulizar_Click);
             // 
             // FormularioProductos
             // 
@@ -214,5 +229,6 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Label lbSaldo;
         private System.Windows.Forms.DataGridView dgvDatosProductos;
+        private System.Windows.Forms.Button btnActulizar;
     }
 }

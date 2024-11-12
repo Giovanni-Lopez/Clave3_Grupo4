@@ -57,7 +57,7 @@ namespace Clave3_Grupo4
         private void FormularioProductos_Load(object sender, EventArgs e)
         {
             CargarClientes();
-            CargarDatos(dgvDatosProductos,"Select * from clienteproductos");
+            CargarDatos(dgvDatosProductos,"Select * from productos");
         }
 
         private void CargarClientes()
@@ -111,5 +111,14 @@ namespace Clave3_Grupo4
 
         }
 
+        private void btnActulizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDatosProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
     }
 }

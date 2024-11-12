@@ -42,6 +42,7 @@ namespace Clave3_Grupo4
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +67,7 @@ namespace Clave3_Grupo4
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnActualizar);
             this.groupBox1.Controls.Add(this.btnProductos);
             this.groupBox1.Controls.Add(this.cbxEstado);
             this.groupBox1.Controls.Add(this.lbEstado);
@@ -79,7 +81,7 @@ namespace Clave3_Grupo4
             this.groupBox1.Controls.Add(this.lbApellido);
             this.groupBox1.Location = new System.Drawing.Point(12, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(263, 284);
+            this.groupBox1.Size = new System.Drawing.Size(301, 284);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
@@ -89,7 +91,7 @@ namespace Clave3_Grupo4
             this.btnProductos.BackColor = System.Drawing.Color.Cyan;
             this.btnProductos.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnProductos.Location = new System.Drawing.Point(164, 248);
+            this.btnProductos.Location = new System.Drawing.Point(126, 248);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(88, 30);
             this.btnProductos.TabIndex = 15;
@@ -122,7 +124,7 @@ namespace Clave3_Grupo4
             this.btnSalir.BackColor = System.Drawing.Color.Cyan;
             this.btnSalir.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSalir.Location = new System.Drawing.Point(83, 248);
+            this.btnSalir.Location = new System.Drawing.Point(220, 248);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 8;
@@ -151,7 +153,7 @@ namespace Clave3_Grupo4
             this.btnGuardar.BackColor = System.Drawing.Color.Cyan;
             this.btnGuardar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardar.Location = new System.Drawing.Point(0, 248);
+            this.btnGuardar.Location = new System.Drawing.Point(6, 202);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 30);
             this.btnGuardar.TabIndex = 5;
@@ -176,16 +178,30 @@ namespace Clave3_Grupo4
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(281, 21);
+            this.dgvClientes.Location = new System.Drawing.Point(319, 21);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(363, 278);
+            this.dgvClientes.Size = new System.Drawing.Size(397, 278);
             this.dgvClientes.TabIndex = 4;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.Cyan;
+            this.btnActualizar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnActualizar.Location = new System.Drawing.Point(6, 248);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 30);
+            this.btnActualizar.TabIndex = 16;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // FormularioGuardarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 317);
+            this.ClientSize = new System.Drawing.Size(728, 317);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -214,5 +230,6 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.Label lbEstado;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

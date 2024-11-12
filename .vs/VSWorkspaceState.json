@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Clave3_Grupo4",
+    "\\Clave3_Grupo4\\Formularios"
   ],
-  "SelectedNode": "\\Clave3_Grupo4.sln",
+  "SelectedNode": "\\Clave3_Grupo4\\Formularios\\FormularioGuardarEmpleados.cs",
   "PreviewInSolutionExplorer": false
 }

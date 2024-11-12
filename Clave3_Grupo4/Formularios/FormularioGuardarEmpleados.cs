@@ -46,6 +46,7 @@ namespace Clave3_Grupo4
             txtNombres.Clear();
             txtApellidos.Clear();
             cmbTipoUsuario.Text = "Seleccione";
+            CargarDatos(dgvEmpleados, "select * from empleados");
         }
 
         private void CargarDatos(DataGridView dgv, string sqlString)
@@ -60,11 +61,45 @@ namespace Clave3_Grupo4
 
             dgv.DataSource = dt;
 
+            conexion.closeConetion();
         }
 
         private void FormularioGuardarEmpleados_Load(object sender, EventArgs e)
         {
             CargarDatos(dgvEmpleados,"select * from empleados");
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nombre = txtNombres.Text;
+                string apellido = txtApellidos.Text;
+                string usuario = cmbTipoUsuario.Text;
+                string id = dgvEmpleados.CurrentRow.Cells[0].Value.ToString();
+                string sqlQuery = "update empleados set nombres ='" + nombre + "',apellidos = '" + apellido + "',tipo= '" + usuario + "' where idEmpleados =" + id;
+                ConexionDB conexion = new ConexionDB();
+                MySqlConnection connection = conexion.getConnection();
+                MySqlCommand sqlCommand = new MySqlCommand(sqlQuery,connection);
+                sqlCommand.ExecuteNonQuery();
+                txtNombres.Clear();
+                txtApellidos.Clear();
+                cmbTipoUsuario.SelectedIndex = -1;
+                CargarDatos(dgvEmpleados, "select * from empleados");
+                MessageBox.Show("Se actulizo el registro con exito");
+                conexion.closeConetion();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al actulizar el regsitro");
+            }
+        }
+
+        private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtNombres.Text = dgvEmpleados.CurrentRow.Cells[1].Value.ToString();
+            txtApellidos.Text = dgvEmpleados.CurrentRow.Cells[2].Value.ToString();
+            cmbTipoUsuario.Text = dgvEmpleados.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }
