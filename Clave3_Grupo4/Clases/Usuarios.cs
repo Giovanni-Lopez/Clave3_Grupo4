@@ -8,46 +8,40 @@ namespace Clave3_Grupo4.Clases
 {
     class Usuarios
     {
-        //Clase donde se crearan los metodos o funciones para los clientes
-       
-        /// <summary>
-       /// IDusuario es autoincrementable por eso no se ha escrito
-       /// </summary>
-      
-        private string idEmpleado;
-        private string nombreUsuario;
-        private string contraseñaUsuario;
+        private string usuario, nombre, contraseña, conContraseña;
+        private int id, idTipo;
 
-        //Encapsula las variables de tipo privadas
-        public string IdEmpleado
+        public string Usuario
         {
-            get { return idEmpleado; }
-            set { idEmpleado = value; }
+            get { return usuario; }
+            set { usuario = value; }
         }
 
-        public string NombreUsuario
+        public string Contraseña
         {
-            get { return nombreUsuario; }
-            set { nombreUsuario = value; }
+            get { return contraseña; }
+            set { contraseña = value; }
         }
-        public string ContraseñaUsuario
+        public string ConContraseña
         {
-            get { return contraseñaUsuario; }
-            set { contraseñaUsuario = value; }
-        }
-
-         //Constructor
-        public Usuarios(string idEmpleado, string nombreUsuario, string contraseñaUsuario)
-        {
-            this.idEmpleado = idEmpleado;
-            this.nombreUsuario = nombreUsuario;
-            this.contraseñaUsuario = contraseñaUsuario;
+            get { return conContraseña; }
+            set { conContraseña = value; }
         }
 
-        //Metodo para iniciar sesión
-        public void iniciarSesion()
+        public string Nombre
         {
-            
+            get { return nombre; }
+            set { nombre = value; }
+        }
+        public int IdTipo
+        {
+            get { return idTipo; }
+            set { idTipo = value; }
+        }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
         }
     }
 }

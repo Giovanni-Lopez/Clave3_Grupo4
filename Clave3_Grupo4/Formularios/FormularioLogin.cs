@@ -1,4 +1,5 @@
 ﻿using Clave3_Grupo4.Formularios;
+using Clave3_Grupo4.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,29 +23,37 @@ namespace Clave3_Grupo4
 
         private void btnConexion_Click(object sender, EventArgs e)
         {
-            
-            //Verifica que la conexión esté correstamente conectada, si no da error de conexión
+            string usuario = txtUsuario.Text;
+            string contraseña = txtPassword.Text;
             try
-            {                
-                if (mConexion.getConnection() != null)
-                {                    
-                    MessageBox.Show("Conexion Exitosa!!");
+            {
+
+                ControlLogin ctr = new ControlLogin();
+
+                string respuesta = ctr.ctrlLogin(usuario, contraseña);
+
+                if (respuesta.Length > 0)
+                {
+                    MessageBox.Show(respuesta);
+                }
+                else
+                {
+                    MessageBox.Show("Se inicio secion con exito");
+
+                    FormularioInicio formularioInicio = new FormularioInicio();
+
+                    formularioInicio.Show();
 
                     this.Hide();
+                }
 
-                    //Abrir el formulario de guardar
-                    FormularioGuardarClientes formularioGuardar = new FormularioGuardarClientes();
-
-                    // Mostrar el formulario
-                    formularioGuardar.Show();
-                    
-                }                             
-            }
-            catch (Exception ex)
-            {                
-                MessageBox.Show("Hubo un error en su conexion, por favor verificar...: " + ex);
-            }            
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error durante el inicio de secion");
+            }                             
         }
+
+        
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {

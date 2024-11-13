@@ -31,6 +31,7 @@ namespace Clave3_Grupo4
         {
             this.lbNombre = new System.Windows.Forms.Label();
             this.gbEmpleado = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -40,7 +41,7 @@ namespace Clave3_Grupo4
             this.lbTipo = new System.Windows.Forms.Label();
             this.lbApellidos = new System.Windows.Forms.Label();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.gbEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -57,6 +58,7 @@ namespace Clave3_Grupo4
             // 
             // gbEmpleado
             // 
+            this.gbEmpleado.Controls.Add(this.btnRegresar);
             this.gbEmpleado.Controls.Add(this.btnActualizar);
             this.gbEmpleado.Controls.Add(this.pictureBox1);
             this.gbEmpleado.Controls.Add(this.btnSalir);
@@ -67,12 +69,25 @@ namespace Clave3_Grupo4
             this.gbEmpleado.Controls.Add(this.lbTipo);
             this.gbEmpleado.Controls.Add(this.lbApellidos);
             this.gbEmpleado.Controls.Add(this.lbNombre);
-            this.gbEmpleado.Location = new System.Drawing.Point(33, 36);
+            this.gbEmpleado.Location = new System.Drawing.Point(12, 36);
             this.gbEmpleado.Name = "gbEmpleado";
-            this.gbEmpleado.Size = new System.Drawing.Size(353, 234);
+            this.gbEmpleado.Size = new System.Drawing.Size(353, 245);
             this.gbEmpleado.TabIndex = 1;
             this.gbEmpleado.TabStop = false;
             this.gbEmpleado.Text = "Datos Empleado";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.Cyan;
+            this.btnActualizar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizar.Location = new System.Drawing.Point(79, 180);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(90, 30);
+            this.btnActualizar.TabIndex = 9;
+            this.btnActualizar.Text = "Actulizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // pictureBox1
             // 
@@ -158,24 +173,24 @@ namespace Clave3_Grupo4
             // dgvEmpleados
             // 
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(399, 36);
+            this.dgvEmpleados.Location = new System.Drawing.Point(371, 36);
             this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.Size = new System.Drawing.Size(386, 245);
+            this.dgvEmpleados.Size = new System.Drawing.Size(414, 245);
             this.dgvEmpleados.TabIndex = 2;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
-            // btnActualizar
+            // btnRegresar
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.Cyan;
-            this.btnActualizar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizar.Location = new System.Drawing.Point(79, 180);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(90, 30);
-            this.btnActualizar.TabIndex = 9;
-            this.btnActualizar.Text = "Actulizar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnRegresar.BackColor = System.Drawing.Color.Cyan;
+            this.btnRegresar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.Black;
+            this.btnRegresar.Location = new System.Drawing.Point(173, 180);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(75, 30);
+            this.btnRegresar.TabIndex = 10;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // FormularioGuardarEmpleados
             // 
@@ -209,5 +224,6 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Clases\ControlLogin.cs" />
     <Compile Include="Clases\RegistroEmpleados.cs" />
     <Compile Include="Clases\RegistroUsuario.cs" />
     <Compile Include="Clases\Usuarios.cs" />

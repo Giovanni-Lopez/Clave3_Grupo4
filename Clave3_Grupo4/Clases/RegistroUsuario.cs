@@ -13,64 +13,30 @@ namespace Clave3_Grupo4.Clases
     /// </summary>
     class RegistroUsuario
     {
-        private string usuario, nombre, contraseña,conContraseña;
-        private int id, idTipo;
-        
-        public string Usuario
-        {
-            get { return usuario; }
-            set { usuario = value; }
-        }
-
-        public string Contraseña
-        {
-            get { return contraseña; }
-            set { contraseña = value; }
-        }
-        public string ConContraseña
-        {
-            get { return conContraseña; }
-            set { conContraseña = value; }
-        }
-
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-        public int IdTipo
-        {
-            get { return idTipo; }
-            set { idTipo = value; }
-        }
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+       
         /// <summary>
         /// Metodo para validar a la horar de realizar el registro
         /// </summary>
         /// <returns></returns>
-        public string ctrlRegistro()
+        public string ctrlRegistro(Usuarios usuarios)
         {
             string respuesta = "";
-            if (string.IsNullOrEmpty(this.Usuario)||string.IsNullOrEmpty(this.Contraseña)||string.IsNullOrEmpty(this.ConContraseña)||string.IsNullOrEmpty(this.Nombre))
+            if (string.IsNullOrEmpty(usuarios.Usuario)||string.IsNullOrEmpty(usuarios.Contraseña)||string.IsNullOrEmpty(usuarios.ConContraseña)||string.IsNullOrEmpty(usuarios.Nombre))
             {
                 respuesta = "Debe llenar todos los campos";
             }
             else
             {
-                if (this.Contraseña == this.ConContraseña)
+                if (usuarios.Contraseña == usuarios.ConContraseña)
                 {
-                    if (existUsuario(this.Usuario))
+                    if (existUsuario(usuarios.Usuario))
                     {
                         respuesta = "El usario ya existe";
                     }
                     else
                     {
-                        this.Contraseña = generarSha1(this.Contraseña);
-                        registroUusario();
+                        usuarios.Contraseña = generarSha1(usuarios.Contraseña);
+                        registroUusario(usuarios);
                     }
                 }
                 else
@@ -85,7 +51,7 @@ namespace Clave3_Grupo4.Clases
         /// Metodo para registrar el usaurio
         /// </summary>
         /// <returns></returns>
-        public int registroUusario()
+        public int registroUusario(Usuarios usuarios)
         {
           
                 ConexionDB conexion = new ConexionDB();
@@ -97,9 +63,9 @@ namespace Clave3_Grupo4.Clases
 
                 MySqlCommand command = new MySqlCommand(sql, connection);
 
-                command.Parameters.AddWithValue("@Usuario", this.Usuario);
-                command.Parameters.AddWithValue("@Contraseña", this.Contraseña);
-                command.Parameters.AddWithValue("@Nombre", this.Nombre);
+                command.Parameters.AddWithValue("@Usuario", usuarios.Usuario);
+                command.Parameters.AddWithValue("@Contraseña", usuarios.Contraseña);
+                command.Parameters.AddWithValue("@Nombre", usuarios.Nombre);
                 command.Parameters.AddWithValue("@idTipo", 1);
 
                 int resultado = command.ExecuteNonQuery();
@@ -123,7 +89,7 @@ namespace Clave3_Grupo4.Clases
             string comando = "Select idUsuario from usuarios where Usuario like @Usuario";
             MySqlCommand command = new MySqlCommand(comando,connection);
 
-            command.Parameters.AddWithValue("@Usuario",this.Usuario);
+            command.Parameters.AddWithValue("@Usuario", usaurio);
 
             reader = command.ExecuteReader();
 
@@ -138,7 +104,7 @@ namespace Clave3_Grupo4.Clases
 
         }
 
-        private string generarSha1(string cadena)
+        public string generarSha1(string cadena)
         {
             UTF8Encoding encoding = new UTF8Encoding();
             byte[] data = encoding.GetBytes(cadena);
@@ -158,6 +124,33 @@ namespace Clave3_Grupo4.Clases
                 sb.Append(resultado[i].ToString("x"));
             }
             return sb.ToString();
+        }
+
+        public Usuarios existeUsuario(string usaurio)
+        {
+            ConexionDB conexion = new ConexionDB();
+            MySqlConnection connection = conexion.getConnection();
+            MySqlDataReader reader;
+
+            conexion.getConnection();
+
+            string comando = "Select idUsuario,Contraseña,idTipo  from usuarios where Usuario like @Usuario";
+            MySqlCommand command = new MySqlCommand(comando, connection);
+
+            command.Parameters.AddWithValue("@Usuario", usaurio);
+
+            reader = command.ExecuteReader();
+
+            Usuarios usr = new Usuarios() ;
+
+            while (reader.Read())
+            {
+                usr.Id = int.Parse(reader["idUsuario"].ToString());
+                usr.Contraseña = reader["Contraseña"].ToString();
+                usr.IdTipo = int.Parse(reader["idTipo"].ToString());
+            }
+
+            return usr;
         }
 
     }

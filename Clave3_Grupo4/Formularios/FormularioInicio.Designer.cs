@@ -29,7 +29,6 @@ namespace Clave3_Grupo4
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLogin = new System.Windows.Forms.Button();
             this.gbInicio = new System.Windows.Forms.GroupBox();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
@@ -38,28 +37,14 @@ namespace Clave3_Grupo4
             this.gbInicio.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnLogin.Font = new System.Drawing.Font("MV Boli", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(67, 33);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(120, 37);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
             // gbInicio
             // 
             this.gbInicio.Controls.Add(this.btnProductos);
             this.gbInicio.Controls.Add(this.btnEmpleados);
             this.gbInicio.Controls.Add(this.btnClientes);
-            this.gbInicio.Controls.Add(this.btnLogin);
             this.gbInicio.Location = new System.Drawing.Point(24, 30);
             this.gbInicio.Name = "gbInicio";
-            this.gbInicio.Size = new System.Drawing.Size(258, 268);
+            this.gbInicio.Size = new System.Drawing.Size(160, 234);
             this.gbInicio.TabIndex = 1;
             this.gbInicio.TabStop = false;
             this.gbInicio.Text = "Seleccione";
@@ -69,7 +54,7 @@ namespace Clave3_Grupo4
             this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnProductos.Font = new System.Drawing.Font("MV Boli", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.Location = new System.Drawing.Point(67, 173);
+            this.btnProductos.Location = new System.Drawing.Point(6, 164);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(120, 37);
             this.btnProductos.TabIndex = 3;
@@ -82,7 +67,7 @@ namespace Clave3_Grupo4
             this.btnEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEmpleados.Font = new System.Drawing.Font("MV Boli", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleados.ForeColor = System.Drawing.Color.White;
-            this.btnEmpleados.Location = new System.Drawing.Point(67, 125);
+            this.btnEmpleados.Location = new System.Drawing.Point(6, 97);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(120, 37);
             this.btnEmpleados.TabIndex = 2;
@@ -95,7 +80,7 @@ namespace Clave3_Grupo4
             this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnClientes.Font = new System.Drawing.Font("MV Boli", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.Color.White;
-            this.btnClientes.Location = new System.Drawing.Point(67, 80);
+            this.btnClientes.Location = new System.Drawing.Point(6, 31);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(120, 37);
             this.btnClientes.TabIndex = 1;
@@ -107,7 +92,7 @@ namespace Clave3_Grupo4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 335);
+            this.ClientSize = new System.Drawing.Size(198, 273);
             this.Controls.Add(this.gbInicio);
             this.Name = "FormularioInicio";
             this.Text = "Inicio";
@@ -117,8 +102,6 @@ namespace Clave3_Grupo4
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.GroupBox gbInicio;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnEmpleados;

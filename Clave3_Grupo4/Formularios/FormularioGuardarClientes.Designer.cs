@@ -32,7 +32,7 @@ namespace Clave3_Grupo4
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbApellido = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnProductos = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
             this.lbEstado = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@ namespace Clave3_Grupo4
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -67,8 +67,8 @@ namespace Clave3_Grupo4
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRegresar);
             this.groupBox1.Controls.Add(this.btnActualizar);
-            this.groupBox1.Controls.Add(this.btnProductos);
             this.groupBox1.Controls.Add(this.cbxEstado);
             this.groupBox1.Controls.Add(this.lbEstado);
             this.groupBox1.Controls.Add(this.btnSalir);
@@ -86,18 +86,18 @@ namespace Clave3_Grupo4
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
-            // btnProductos
+            // btnActualizar
             // 
-            this.btnProductos.BackColor = System.Drawing.Color.Cyan;
-            this.btnProductos.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnProductos.Location = new System.Drawing.Point(126, 248);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(88, 30);
-            this.btnProductos.TabIndex = 15;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.UseVisualStyleBackColor = false;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            this.btnActualizar.BackColor = System.Drawing.Color.Cyan;
+            this.btnActualizar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnActualizar.Location = new System.Drawing.Point(6, 248);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 30);
+            this.btnActualizar.TabIndex = 16;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // cbxEstado
             // 
@@ -124,7 +124,7 @@ namespace Clave3_Grupo4
             this.btnSalir.BackColor = System.Drawing.Color.Cyan;
             this.btnSalir.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSalir.Location = new System.Drawing.Point(220, 248);
+            this.btnSalir.Location = new System.Drawing.Point(139, 248);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 8;
@@ -184,18 +184,18 @@ namespace Clave3_Grupo4
             this.dgvClientes.TabIndex = 4;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
-            // btnActualizar
+            // btnRegresar
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.Cyan;
-            this.btnActualizar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnActualizar.Location = new System.Drawing.Point(6, 248);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 30);
-            this.btnActualizar.TabIndex = 16;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnRegresar.BackColor = System.Drawing.Color.Cyan;
+            this.btnRegresar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRegresar.Location = new System.Drawing.Point(220, 248);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(75, 30);
+            this.btnRegresar.TabIndex = 17;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // FormularioGuardarClientes
             // 
@@ -228,8 +228,8 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ComboBox cbxEstado;
         private System.Windows.Forms.Label lbEstado;
-        private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

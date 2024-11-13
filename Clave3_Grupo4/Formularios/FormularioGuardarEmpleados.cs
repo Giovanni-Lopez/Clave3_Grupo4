@@ -107,5 +107,14 @@ namespace Clave3_Grupo4
             txtApellidos.Text = dgvEmpleados.CurrentRow.Cells[2].Value.ToString();
             cmbTipoUsuario.Text = dgvEmpleados.CurrentRow.Cells[3].Value.ToString();
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            FormularioInicio formularioInicio = new FormularioInicio();
+
+            formularioInicio.Show();
+
+            this.Hide();
+        }
     }
 }

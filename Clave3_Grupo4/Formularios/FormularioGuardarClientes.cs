@@ -123,5 +123,14 @@ namespace Clave3_Grupo4
                 MessageBox.Show("No se puedieron actulizar los datos");
             }
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            FormularioInicio formularioInicio = new FormularioInicio();
+
+            formularioInicio.Show();
+
+            this.Hide();
+        }
     }
 }

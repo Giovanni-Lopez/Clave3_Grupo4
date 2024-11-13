@@ -21,14 +21,15 @@ namespace Clave3_Grupo4.Formularios
 
         private void Registrar_Click(object sender, EventArgs e)
         {
-          
-                RegistroUsuario usuario = new RegistroUsuario();
-                usuario.Usuario = txtUsuario.Text;
-                usuario.Contraseña = txtContraseña.Text;
-                usuario.ConContraseña = txtConfirmarContraseña.Text;
-                usuario.Nombre = txtNombre.Text;
 
-                string respuesta = usuario.ctrlRegistro();
+            Usuarios usuarios = new Usuarios();
+            RegistroUsuario registro = new RegistroUsuario();
+                usuarios.Usuario = txtUsuario.Text;
+                usuarios.Contraseña = txtContraseña.Text;
+                usuarios.ConContraseña = txtConfirmarContraseña.Text;
+                usuarios.Nombre = txtNombre.Text;
+
+                string respuesta = registro.ctrlRegistro(usuarios);
 
                 if (respuesta.Length > 0)
                 {
