@@ -136,3 +136,4 @@ C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.csproj.Cor
 C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.csproj.CopyComplete
 C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.exe
 C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.pdb
+C:\Users\cabre\Documents\GitHub\Clave3_Grupo4\obj\Debug\Clave3_Grupo4.Formularios.FormularioCrearUsuario.resources

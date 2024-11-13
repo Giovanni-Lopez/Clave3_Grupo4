@@ -20,22 +20,30 @@ namespace Clave3_Grupo4
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //Validando campos vacios
-            if (string.IsNullOrWhiteSpace(txtNombreProducto.Text) || string.IsNullOrWhiteSpace(cmbTipoProducto.SelectedItem != null ? cmbTipoProducto.SelectedItem.ToString() : string.Empty))
+            try
             {
-                MessageBox.Show("Por favor complete todos los campos...!!");
-                return;
+                //Validando campos vacios
+                if (string.IsNullOrWhiteSpace(txtNombreProducto.Text) || string.IsNullOrWhiteSpace(cmbTipoProducto.SelectedItem != null ? cmbTipoProducto.SelectedItem.ToString() : string.Empty))
+                {
+                    MessageBox.Show("Por favor complete todos los campos...!!");
+                    return;
+                }
+
+                //Creando nueva instancia 
+                RegistroProductos nuevoProducto = new RegistroProductos(txtNombreProducto.Text, cmbTipoProducto.Text, Convert.ToDouble(txtSaldo.Text), Convert.ToInt32(cbxCliente.Text));
+
+                //metodo para que guarde nuestro registro
+                nuevoProducto.GuardarRegistro();
+
+                //Limpiando campos, luego de haber guardado
+                txtNombreProducto.Clear();
+                cmbTipoProducto.Text = "Seleccione";
+
+                CargarDatos(dgvDatosProductos, "Select * from productos");
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al guardar el registro");
             }
-
-            //Creando nueva instancia 
-            RegistroProductos nuevoProducto = new RegistroProductos(txtNombreProducto.Text, cmbTipoProducto.Text, Convert.ToDouble( txtSaldo.Text), Convert.ToInt32( cbxCliente.Text));
-
-            //metodo para que guarde nuestro registro
-            nuevoProducto.GuardarRegistro();
-
-            //Limpiando campos, luego de haber guardado
-            txtNombreProducto.Clear();            
-            cmbTipoProducto.Text = "Seleccione";
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -109,16 +117,43 @@ namespace Clave3_Grupo4
 
             dgv.DataSource = dt;
 
+            conexion.closeConetion();
+
         }
 
         private void btnActulizar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                string nombre = txtNombreProducto.Text;
+                string Tipo = cmbTipoProducto.Text;
+                string id = dgvDatosProductos.CurrentRow.Cells[0].Value.ToString();
+                string sqlComando = "update productos set nombreProducto ='" + nombre + "',tipoProducto = '" + Tipo + "' where idproducto =" + id;
+                ConexionDB conexion = new ConexionDB();
+                MySqlConnection connection = conexion.getConnection();
+                MySqlCommand command = new MySqlCommand(sqlComando, connection);
+                command.ExecuteNonQuery();
+                txtNombreProducto.Clear();
+                cmbTipoProducto.SelectedIndex = -1;
+                CargarDatos(dgvDatosProductos, "Select * from productos");
+                MessageBox.Show("Se actulizaron los datos con exito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actulizar los datos");
+            }
         }
-
+        /// <summary>
+        /// Permite que al darle click en una celda de el datagridview 
+        /// se muestren los datos de esa fila en los campos lo que facilita 
+        /// la modificacion de los registros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvDatosProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            txtNombreProducto.Text = dgvDatosProductos.CurrentRow.Cells[1].Value.ToString();
+            cmbTipoProducto.Text = dgvDatosProductos.CurrentRow.Cells[2].Value.ToString();
         }
     }
 }

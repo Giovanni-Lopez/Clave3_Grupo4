@@ -82,7 +82,13 @@ namespace Clave3_Grupo4
         {
             CargarDatos(dgvClientes,"select * from clientes");
         }
-
+        /// <summary>
+        /// Permite que al darle click en una celda de el datagridview 
+        /// se muestren los datos de esa fila en los campos lo que facilita 
+        /// la modificacion de los registros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtNombre.Text = dgvClientes.CurrentRow.Cells[1].Value.ToString();

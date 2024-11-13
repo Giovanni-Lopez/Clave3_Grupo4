@@ -94,7 +94,13 @@ namespace Clave3_Grupo4
                 MessageBox.Show("Error al actulizar el regsitro");
             }
         }
-
+        /// <summary>
+        /// Permite que al darle click en una celda de el datagridview 
+        /// se muestren los datos de esa fila en los campos lo que facilita 
+        /// la modificacion de los registros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtNombres.Text = dgvEmpleados.CurrentRow.Cells[1].Value.ToString();

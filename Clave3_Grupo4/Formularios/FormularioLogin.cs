@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clave3_Grupo4.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,10 +51,11 @@ namespace Clave3_Grupo4
             this.Hide();
 
             //Abrir el formularioRegistroEmpleados
-            FormularioGuardarEmpleados formularioGuardarEmpleado = new FormularioGuardarEmpleados();
+            FormularioCrearUsuario formularioCrearUsuario = new FormularioCrearUsuario();
+
 
             // Mostrar el formulario
-            formularioGuardarEmpleado.Show();
+            formularioCrearUsuario.Show();
         }
     }
 }
