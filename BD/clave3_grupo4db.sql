@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 13, 2024 at 10:28 PM
+-- Generation Time: Nov 14, 2024 at 03:41 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -52,10 +52,8 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`idClientes`, `nombres`, `apellidos`, `DUI`, `estado`) VALUES
-(4, 'Alexis', 'Lopez', '909090', 'Activo'),
-(5, 'as', 'as', '121212121', 'Baja'),
-(6, 'ase', 'ase', '12', 'Activo'),
-(9, 'Vladimir', 'Cabrera', '3214123', 'Activo');
+(10, 'Alexis', 'Lopez', '8978787', 'Activo'),
+(11, 'Alberto', 'Perez', '9090909', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -70,14 +68,6 @@ CREATE TABLE `empleados` (
   `tipo` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `empleados`
---
-
-INSERT INTO `empleados` (`idEmpleados`, `nombres`, `apellidos`, `tipo`) VALUES
-(7, 'Alexis', 'Lopez', 'Gerente'),
-(8, 'Vladimir', 'Cabrera', 'Asesor');
-
 -- --------------------------------------------------------
 
 --
@@ -87,7 +77,9 @@ INSERT INTO `empleados` (`idEmpleados`, `nombres`, `apellidos`, `tipo`) VALUES
 CREATE TABLE `productos` (
   `idproductos` int NOT NULL,
   `nombreProducto` varchar(50) NOT NULL,
-  `tipoProducto` varchar(20) NOT NULL
+  `tipoProducto` varchar(20) NOT NULL,
+  `saldo` double DEFAULT NULL,
+  `clienteid` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -130,7 +122,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`idUsuario`, `Usuario`, `Contraseña`, `Nombre`, `idTipo`) VALUES
 (1, 'qwe', '356a192b7913b04c54574d18c28d46e6395428ab', 'qw', 1),
 (2, 'Usuario', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Vladimir', 1),
-(3, 'm', '77de68daecd823babbb58edb1c8e14d7106e83bb', 'q', 1);
+(3, 'm', '77de68daecd823babbb58edb1c8e14d7106e83bb', 'q', 1),
+(4, 'Alexis', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'AlexisLopez', 1);
 
 --
 -- Indexes for dumped tables
@@ -160,7 +153,8 @@ ALTER TABLE `empleados`
 -- Indexes for table `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`idproductos`);
+  ADD PRIMARY KEY (`idproductos`),
+  ADD KEY `fk_clienteid` (`clienteid`);
 
 --
 -- Indexes for table `tipousuario`
@@ -183,13 +177,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `idClientes` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idClientes` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `idEmpleados` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idEmpleados` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `productos`
@@ -207,7 +201,7 @@ ALTER TABLE `tipousuario`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idUsuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -219,6 +213,12 @@ ALTER TABLE `usuarios`
 ALTER TABLE `clienteproductos`
   ADD CONSTRAINT `clienteproductos_ibfk_1` FOREIGN KEY (`idClientes`) REFERENCES `clientes` (`idClientes`),
   ADD CONSTRAINT `clienteproductos_ibfk_2` FOREIGN KEY (`idProductos`) REFERENCES `productos` (`idproductos`);
+
+--
+-- Constraints for table `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `fk_clienteid` FOREIGN KEY (`clienteid`) REFERENCES `clientes` (`idClientes`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `usuarios`
