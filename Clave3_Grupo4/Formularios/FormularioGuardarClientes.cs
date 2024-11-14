@@ -132,5 +132,38 @@ namespace Clave3_Grupo4
 
             this.Hide();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validar que haya una fila seleccionada en el DataGridView
+                if (dgvClientes.CurrentRow == null || dgvClientes.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("Por favor, selecciona un registro para eliminar.");
+                    return;
+                }
+
+                // Obtener el idCliente de la fila seleccionada
+                int idCliente = Convert.ToInt32(dgvClientes.CurrentRow.Cells[0].Value);
+
+                // Instancia de la clase RegistroClientes y eliminación del registro
+                RegistroClientes registro = new RegistroClientes();
+                registro.EliminarRegistro(idCliente);
+
+                // Limpiar los campos
+                txtNombre.Clear();
+                txtApellido.Clear();
+                txtDui.Clear();
+                cbxEstado.SelectedIndex = -1;
+
+                // Recargar los datos en el DataGridView
+                CargarDatos(dgvClientes, "SELECT * FROM clientes");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar eliminar el registro: " + ex.Message);
+            }
+        }
     }
 }

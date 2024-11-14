@@ -34,6 +34,7 @@ namespace Clave3_Grupo4
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.cmbTipoProducto = new System.Windows.Forms.ComboBox();
             this.gbProducto = new System.Windows.Forms.GroupBox();
+            this.btnActulizar = new System.Windows.Forms.Button();
             this.lbCliente = new System.Windows.Forms.Label();
             this.cbxCliente = new System.Windows.Forms.ComboBox();
             this.txtSaldo = new System.Windows.Forms.TextBox();
@@ -42,7 +43,7 @@ namespace Clave3_Grupo4
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgvDatosProductos = new System.Windows.Forms.DataGridView();
-            this.btnActulizar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.gbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosProductos)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@ namespace Clave3_Grupo4
             // lbTipoProducto
             // 
             this.lbTipoProducto.AutoSize = true;
-            this.lbTipoProducto.Location = new System.Drawing.Point(16, 74);
+            this.lbTipoProducto.Location = new System.Drawing.Point(16, 61);
             this.lbTipoProducto.Name = "lbTipoProducto";
             this.lbTipoProducto.Size = new System.Drawing.Size(28, 13);
             this.lbTipoProducto.TabIndex = 1;
@@ -79,7 +80,7 @@ namespace Clave3_Grupo4
             "Cuenta",
             "Tarjeta",
             "Prestamo"});
-            this.cmbTipoProducto.Location = new System.Drawing.Point(19, 91);
+            this.cmbTipoProducto.Location = new System.Drawing.Point(19, 78);
             this.cmbTipoProducto.Name = "cmbTipoProducto";
             this.cmbTipoProducto.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoProducto.TabIndex = 3;
@@ -87,6 +88,7 @@ namespace Clave3_Grupo4
             // 
             // gbProducto
             // 
+            this.gbProducto.Controls.Add(this.btnEliminar);
             this.gbProducto.Controls.Add(this.btnActulizar);
             this.gbProducto.Controls.Add(this.lbCliente);
             this.gbProducto.Controls.Add(this.cbxCliente);
@@ -101,15 +103,27 @@ namespace Clave3_Grupo4
             this.gbProducto.Controls.Add(this.cmbTipoProducto);
             this.gbProducto.Location = new System.Drawing.Point(24, 12);
             this.gbProducto.Name = "gbProducto";
-            this.gbProducto.Size = new System.Drawing.Size(276, 231);
+            this.gbProducto.Size = new System.Drawing.Size(345, 289);
             this.gbProducto.TabIndex = 4;
             this.gbProducto.TabStop = false;
             this.gbProducto.Text = "Datos";
             // 
+            // btnActulizar
+            // 
+            this.btnActulizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnActulizar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActulizar.Location = new System.Drawing.Point(109, 211);
+            this.btnActulizar.Name = "btnActulizar";
+            this.btnActulizar.Size = new System.Drawing.Size(86, 31);
+            this.btnActulizar.TabIndex = 12;
+            this.btnActulizar.Text = "Actulizar";
+            this.btnActulizar.UseVisualStyleBackColor = false;
+            this.btnActulizar.Click += new System.EventHandler(this.btnActulizar_Click);
+            // 
             // lbCliente
             // 
             this.lbCliente.AutoSize = true;
-            this.lbCliente.Location = new System.Drawing.Point(16, 177);
+            this.lbCliente.Location = new System.Drawing.Point(16, 150);
             this.lbCliente.Name = "lbCliente";
             this.lbCliente.Size = new System.Drawing.Size(39, 13);
             this.lbCliente.TabIndex = 11;
@@ -118,7 +132,7 @@ namespace Clave3_Grupo4
             // cbxCliente
             // 
             this.cbxCliente.FormattingEnabled = true;
-            this.cbxCliente.Location = new System.Drawing.Point(19, 193);
+            this.cbxCliente.Location = new System.Drawing.Point(19, 166);
             this.cbxCliente.Name = "cbxCliente";
             this.cbxCliente.Size = new System.Drawing.Size(121, 21);
             this.cbxCliente.TabIndex = 10;
@@ -126,7 +140,7 @@ namespace Clave3_Grupo4
             // 
             // txtSaldo
             // 
-            this.txtSaldo.Location = new System.Drawing.Point(19, 148);
+            this.txtSaldo.Location = new System.Drawing.Point(19, 121);
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.Size = new System.Drawing.Size(121, 20);
             this.txtSaldo.TabIndex = 9;
@@ -134,7 +148,7 @@ namespace Clave3_Grupo4
             // lbSaldo
             // 
             this.lbSaldo.AutoSize = true;
-            this.lbSaldo.Location = new System.Drawing.Point(16, 132);
+            this.lbSaldo.Location = new System.Drawing.Point(16, 105);
             this.lbSaldo.Name = "lbSaldo";
             this.lbSaldo.Size = new System.Drawing.Size(34, 13);
             this.lbSaldo.TabIndex = 8;
@@ -144,7 +158,7 @@ namespace Clave3_Grupo4
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnRegresar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(181, 190);
+            this.btnRegresar.Location = new System.Drawing.Point(100, 248);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(75, 31);
             this.btnRegresar.TabIndex = 7;
@@ -156,7 +170,7 @@ namespace Clave3_Grupo4
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSalir.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(181, 159);
+            this.btnSalir.Location = new System.Drawing.Point(181, 248);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 31);
             this.btnSalir.TabIndex = 6;
@@ -168,7 +182,7 @@ namespace Clave3_Grupo4
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGuardar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(181, 19);
+            this.btnGuardar.Location = new System.Drawing.Point(19, 211);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 31);
             this.btnGuardar.TabIndex = 5;
@@ -179,29 +193,29 @@ namespace Clave3_Grupo4
             // dgvDatosProductos
             // 
             this.dgvDatosProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosProductos.Location = new System.Drawing.Point(314, 12);
+            this.dgvDatosProductos.Location = new System.Drawing.Point(24, 307);
             this.dgvDatosProductos.Name = "dgvDatosProductos";
-            this.dgvDatosProductos.Size = new System.Drawing.Size(418, 230);
+            this.dgvDatosProductos.Size = new System.Drawing.Size(536, 113);
             this.dgvDatosProductos.TabIndex = 5;
             this.dgvDatosProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosProductos_CellClick);
             // 
-            // btnActulizar
+            // btnEliminar
             // 
-            this.btnActulizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnActulizar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActulizar.Location = new System.Drawing.Point(175, 56);
-            this.btnActulizar.Name = "btnActulizar";
-            this.btnActulizar.Size = new System.Drawing.Size(95, 31);
-            this.btnActulizar.TabIndex = 12;
-            this.btnActulizar.Text = "Actulizar";
-            this.btnActulizar.UseVisualStyleBackColor = false;
-            this.btnActulizar.Click += new System.EventHandler(this.btnActulizar_Click);
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEliminar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(201, 211);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(86, 31);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // FormularioProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 262);
+            this.ClientSize = new System.Drawing.Size(561, 432);
             this.Controls.Add(this.dgvDatosProductos);
             this.Controls.Add(this.gbProducto);
             this.Name = "FormularioProductos";
@@ -230,5 +244,6 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.Label lbSaldo;
         private System.Windows.Forms.DataGridView dgvDatosProductos;
         private System.Windows.Forms.Button btnActulizar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

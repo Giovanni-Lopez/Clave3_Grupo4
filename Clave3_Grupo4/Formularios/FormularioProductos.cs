@@ -22,27 +22,39 @@ namespace Clave3_Grupo4
         {
             try
             {
-                //Validando campos vacios
-                if (string.IsNullOrWhiteSpace(txtNombreProducto.Text) || string.IsNullOrWhiteSpace(cmbTipoProducto.SelectedItem != null ? cmbTipoProducto.SelectedItem.ToString() : string.Empty))
+                // Validando campos vacíos
+                if (string.IsNullOrWhiteSpace(txtNombreProducto.Text) ||
+                    string.IsNullOrWhiteSpace(cmbTipoProducto.SelectedItem?.ToString()) ||
+                    string.IsNullOrWhiteSpace(txtSaldo.Text) ||
+                    string.IsNullOrWhiteSpace(cbxCliente.Text))
                 {
-                    MessageBox.Show("Por favor complete todos los campos...!!");
+                    MessageBox.Show("Por favor complete todos los campos.");
                     return;
                 }
 
-                //Creando nueva instancia 
-                RegistroProductos nuevoProducto = new RegistroProductos(txtNombreProducto.Text, cmbTipoProducto.Text, Convert.ToDouble(txtSaldo.Text), Convert.ToInt32(cbxCliente.Text));
+                // Creando una nueva instancia de RegistroProductos
+                RegistroProductos nuevoProducto = new RegistroProductos(
+                    txtNombreProducto.Text,
+                    cmbTipoProducto.Text,
+                    double.Parse(txtSaldo.Text),
+                    int.Parse(cbxCliente.Text)                    
+                );
 
-                //metodo para que guarde nuestro registro
+                // Llamar al método para guardar el registro
                 nuevoProducto.GuardarRegistro();
 
-                //Limpiando campos, luego de haber guardado
+                // Limpiando los campos después de guardar
                 txtNombreProducto.Clear();
-                cmbTipoProducto.Text = "Seleccione";
+                cmbTipoProducto.SelectedIndex = -1;
+                txtSaldo.Clear();
+                cbxCliente.SelectedIndex = -1;
 
-                CargarDatos(dgvDatosProductos, "Select * from productos");
-            }catch(Exception ex)
+                // Recargar los datos en el DataGridView
+                CargarDatos(dgvDatosProductos, "SELECT * FROM productos");
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar el registro");
+                MessageBox.Show("Error al guardar el registro: " + ex.Message);
             }
         }
 
@@ -154,6 +166,30 @@ namespace Clave3_Grupo4
         {
             txtNombreProducto.Text = dgvDatosProductos.CurrentRow.Cells[1].Value.ToString();
             cmbTipoProducto.Text = dgvDatosProductos.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvDatosProductos.CurrentRow == null || dgvDatosProductos.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("Por favor, selecciona un producto para eliminar.");
+                    return;
+                }
+
+                int idProducto = Convert.ToInt32(dgvDatosProductos.CurrentRow.Cells[0].Value);
+
+                RegistroProductos registroProducto = new RegistroProductos();
+                registroProducto.EliminarProducto(idProducto);
+
+                // Actualizar el DataGridView con los productos actuales
+                CargarDatos(dgvDatosProductos, "SELECT * FROM productos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el producto: " + ex.Message);
+            }
         }
     }
 }

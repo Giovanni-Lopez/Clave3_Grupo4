@@ -69,6 +69,7 @@ namespace Clave3_Grupo4
             CargarDatos(dgvEmpleados,"select * from empleados");
         }
 
+        //Metodo actualizar
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             try
@@ -115,6 +116,30 @@ namespace Clave3_Grupo4
             formularioInicio.Show();
 
             this.Hide();
+        }
+
+        //Boton para eliminar
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvEmpleados.CurrentRow == null || dgvEmpleados.CurrentRow.Index < 0)
+                {
+                    MessageBox.Show("Por favor, selecciona un registro para eliminar.");
+                    return;
+                }
+
+                int idEmpleado = Convert.ToInt32(dgvEmpleados.CurrentRow.Cells[0].Value);
+
+                RegistroEmpleados registro = new RegistroEmpleados();
+                registro.EliminarRegistro(idEmpleado);
+
+                CargarDatos(dgvEmpleados, "SELECT * FROM empleados");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar eliminar el registro: " + ex.Message);
+            }
         }
     }
 }

@@ -53,6 +53,11 @@ namespace Clave3_Grupo4
 
         }
 
+        // Constructor vacio
+        public RegistroClientes()
+        {
+        }
+
         //Constructor
         public RegistroClientes(string nombres, string apellidos, int dui, string estado)
         {
@@ -104,6 +109,53 @@ namespace Clave3_Grupo4
             }
 
         }
+
+        public void EliminarRegistro(int idCliente)
+        {
+            // Nueva instancia de la clase ConexionDB
+            ConexionDB objConexion = new ConexionDB();
+
+            // Obtener la conexión
+            MySqlConnection conexion = objConexion.getConnection();
+
+            try
+            {
+                // se hace la consulta SQL para eliminar el registro
+                string query = "DELETE FROM clientes WHERE idClientes = @idCliente";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                {
+                    // Asignar valor al parámetro
+                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                    // Ejecutar el comando
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show("Registro eliminado exitosamente.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró un registro con el ID especificado.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se produjo un error al eliminar el registro: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión si está abierta
+                if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+
 
     }
 }

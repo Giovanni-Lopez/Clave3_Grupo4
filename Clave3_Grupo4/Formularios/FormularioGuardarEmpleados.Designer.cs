@@ -31,6 +31,7 @@ namespace Clave3_Grupo4
         {
             this.lbNombre = new System.Windows.Forms.Label();
             this.gbEmpleado = new System.Windows.Forms.GroupBox();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@ namespace Clave3_Grupo4
             this.lbTipo = new System.Windows.Forms.Label();
             this.lbApellidos = new System.Windows.Forms.Label();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.gbEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -50,7 +51,7 @@ namespace Clave3_Grupo4
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(6, 27);
+            this.lbNombre.Location = new System.Drawing.Point(3, 32);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(49, 13);
             this.lbNombre.TabIndex = 0;
@@ -58,6 +59,7 @@ namespace Clave3_Grupo4
             // 
             // gbEmpleado
             // 
+            this.gbEmpleado.Controls.Add(this.btnEliminar);
             this.gbEmpleado.Controls.Add(this.btnRegresar);
             this.gbEmpleado.Controls.Add(this.btnActualizar);
             this.gbEmpleado.Controls.Add(this.pictureBox1);
@@ -71,10 +73,23 @@ namespace Clave3_Grupo4
             this.gbEmpleado.Controls.Add(this.lbNombre);
             this.gbEmpleado.Location = new System.Drawing.Point(12, 36);
             this.gbEmpleado.Name = "gbEmpleado";
-            this.gbEmpleado.Size = new System.Drawing.Size(353, 245);
+            this.gbEmpleado.Size = new System.Drawing.Size(444, 245);
             this.gbEmpleado.TabIndex = 1;
             this.gbEmpleado.TabStop = false;
             this.gbEmpleado.Text = "Datos Empleado";
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.Cyan;
+            this.btnRegresar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.Black;
+            this.btnRegresar.Location = new System.Drawing.Point(271, 180);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(75, 30);
+            this.btnRegresar.TabIndex = 10;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnActualizar
             // 
@@ -92,9 +107,9 @@ namespace Clave3_Grupo4
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Clave3_Grupo4.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(249, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(332, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(88, 84);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -104,7 +119,7 @@ namespace Clave3_Grupo4
             this.btnSalir.BackColor = System.Drawing.Color.Cyan;
             this.btnSalir.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(254, 180);
+            this.btnSalir.Location = new System.Drawing.Point(363, 180);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 7;
@@ -132,7 +147,7 @@ namespace Clave3_Grupo4
             "Cajero",
             "Asesor",
             "Gerente"});
-            this.cmbTipoUsuario.Location = new System.Drawing.Point(9, 135);
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(6, 140);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
             this.cmbTipoUsuario.Size = new System.Drawing.Size(179, 21);
             this.cmbTipoUsuario.TabIndex = 5;
@@ -140,14 +155,14 @@ namespace Clave3_Grupo4
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(9, 91);
+            this.txtApellidos.Location = new System.Drawing.Point(6, 96);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(179, 20);
             this.txtApellidos.TabIndex = 4;
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(9, 44);
+            this.txtNombres.Location = new System.Drawing.Point(6, 49);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(179, 20);
             this.txtNombres.TabIndex = 3;
@@ -155,7 +170,7 @@ namespace Clave3_Grupo4
             // lbTipo
             // 
             this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(6, 118);
+            this.lbTipo.Location = new System.Drawing.Point(3, 123);
             this.lbTipo.Name = "lbTipo";
             this.lbTipo.Size = new System.Drawing.Size(67, 13);
             this.lbTipo.TabIndex = 2;
@@ -164,7 +179,7 @@ namespace Clave3_Grupo4
             // lbApellidos
             // 
             this.lbApellidos.AutoSize = true;
-            this.lbApellidos.Location = new System.Drawing.Point(6, 75);
+            this.lbApellidos.Location = new System.Drawing.Point(3, 80);
             this.lbApellidos.Name = "lbApellidos";
             this.lbApellidos.Size = new System.Drawing.Size(49, 13);
             this.lbApellidos.TabIndex = 1;
@@ -173,30 +188,30 @@ namespace Clave3_Grupo4
             // dgvEmpleados
             // 
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(371, 36);
+            this.dgvEmpleados.Location = new System.Drawing.Point(12, 298);
             this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.Size = new System.Drawing.Size(414, 245);
+            this.dgvEmpleados.Size = new System.Drawing.Size(444, 129);
             this.dgvEmpleados.TabIndex = 2;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
-            // btnRegresar
+            // btnEliminar
             // 
-            this.btnRegresar.BackColor = System.Drawing.Color.Cyan;
-            this.btnRegresar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.Black;
-            this.btnRegresar.Location = new System.Drawing.Point(173, 180);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(75, 30);
-            this.btnRegresar.TabIndex = 10;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.btnEliminar.BackColor = System.Drawing.Color.Cyan;
+            this.btnEliminar.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminar.Location = new System.Drawing.Point(175, 180);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(90, 30);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // FormularioGuardarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 293);
+            this.ClientSize = new System.Drawing.Size(471, 437);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.gbEmpleado);
             this.Name = "FormularioGuardarEmpleados";
@@ -225,5 +240,6 @@ namespace Clave3_Grupo4
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

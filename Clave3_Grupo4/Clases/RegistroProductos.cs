@@ -11,22 +11,22 @@ namespace Clave3_Grupo4
     class RegistroProductos
     {
         //Clase donde se crearan los metodos o funciones para los productos
-        private string nombres;
-        private string tipoProductos;
+        private string nombreProducto;
+        private string tipoProducto;
         private double saldo;
-        private int idCliente;
+        private int clienteId;
 
         //Encapsula las variables de tipo privadas
-        public string Nombres
+        public string NombreProducto
         {
-            get { return nombres;}
-            set { nombres = value; }
+            get { return nombreProducto;}
+            set { nombreProducto = value; }
         }
 
-        public string TipoProductos
+        public string TipoProducto
         {
-            get { return tipoProductos; }
-            set { tipoProductos = value; }
+            get { return tipoProducto; }
+            set { tipoProducto = value; }
         }
 
         public double Saldo
@@ -35,62 +35,89 @@ namespace Clave3_Grupo4
             set { saldo = value; }
         }
 
-        public int IdCliente
+        public int ClienteId
         {
-            get { return idCliente; }
-            set { idCliente = value; }
+            get { return clienteId; }
+            set { clienteId = value; }
+        }
+
+        //Constructor vacio
+        public RegistroProductos()
+        {
+
         }
 
         //Contructor
-        public RegistroProductos(string nombres, string tipoProductos, double saldo, int idCliente)
+        // Constructor para inicializar la clase
+        public RegistroProductos(string nombreProducto, string tipoProducto, double saldo, int clienteId)
         {
-            this.nombres = nombres;
-            this.tipoProductos = tipoProductos;
+            this.nombreProducto = nombreProducto;
+            this.tipoProducto = tipoProducto;
             this.saldo = saldo;
-            this.idCliente = idCliente;
+            this.clienteId = clienteId;
         }
 
-        //Metodo para guardar registro
+        // Método para guardar el registro del producto
         public void GuardarRegistro()
         {
-            //Nueva Instancia de la clase ConexionDB
             ConexionDB objConexion = new ConexionDB();
-
-            //Obtener la conexion
             MySqlConnection conexion = objConexion.getConnection();
-
+           
             try
             {
-                string query = "INSERT INTO productos (nombreProducto, tipoProducto, saldo, idCliente) VALUES (@nombreProductos, @tipoProductos, @idCliente)";
+                string query = "INSERT INTO productos (nombreProducto, tipoProducto, saldo, clienteid) VALUES (@nombreProducto, @tipoProducto, @saldo, @clienteid)";
                 using (MySqlCommand cmd = new MySqlCommand(query, conexion))
                 {
-                    //Se le asignan valores a los parametros
-                    cmd.Parameters.AddWithValue("@nombreProductos", this.Nombres);
-                    cmd.Parameters.AddWithValue("@tipoProductos", this.TipoProductos);
+                    cmd.Parameters.AddWithValue("@nombreProducto", this.NombreProducto);
+                    cmd.Parameters.AddWithValue("@tipoProducto", this.TipoProducto);
                     cmd.Parameters.AddWithValue("@saldo", this.Saldo);
-                    cmd.Parameters.AddWithValue("idCliente", this.IdCliente);
+                    cmd.Parameters.AddWithValue("@clienteid", this.ClienteId);
 
-                    //Ejecutamos comando
+                    // Ejecuta la consulta
                     cmd.ExecuteNonQuery();
+                    MessageBox.Show("Producto guardado exitosamente.");
                 }
-
-                MessageBox.Show("Registro guardado exitosamente....");
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se producjo un error al guardar el registro: " + ex.Message);
+                MessageBox.Show("Error al guardar el registro: " + ex.Message);
             }
-
             finally
             {
-                // Cerrar la conexión si está abierta
                 if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
                 {
                     conexion.Close();
                 }
             }
+        }
 
+        // Método para eliminar un producto
+        public void EliminarProducto(int idProducto)
+        {
+            ConexionDB objConexion = new ConexionDB();
+            MySqlConnection conexion = objConexion.getConnection();
+
+            try
+            {
+                string query = "DELETE FROM productos WHERE idProducto = @idProducto";
+                using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@idProducto", idProducto);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Producto eliminado exitosamente.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el producto: " + ex.Message);
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
         }
     }
 }
